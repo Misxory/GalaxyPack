@@ -1,0 +1,246 @@
+
+
+/* Basic */
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    color: #0f0f0f;
+}
+
+h1,h2,h3,a,ul,p {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: default;
+}
+
+a {
+    cursor: pointer;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+
+/* Header */
+
+
+header {
+    background-color: rgba(231, 231, 231, 0.8);
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    background-image: url(../title.png);
+    background-size: 105px;
+    background-repeat: no-repeat;
+    background-position: 120px;
+    z-index: 1000;
+}
+
+header ul {
+    display: inline;
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 30px);
+}
+
+header a {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none
+}
+
+
+/* About-infos */
+
+
+.about-content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about-content h1{
+	 text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+	 animation-name: title-pop-in;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    font-size: 40px;
+    font-weight: 330;
+    z-index: 500;
+}
+.about-content h3{
+	 animation-name: title-pop-out;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    font-size: 18px;
+    font-weight: 330;
+    padding-top: 15px;
+    padding-bottom: 18px
+    z-index: 500;
+}
+.bar {
+    width: 95vw;
+    transform: translateX(2.5vw);
+    margin-bottom: 8vw;
+    height: 3.5px;
+    background-color: rgba(221, 221, 221, 0.3);
+}
+.about-history h1{
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 350;
+    padding-left: 35px;
+    color: #494949;
+}
+.about-history p{
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 45px;
+    line-height: 20px;
+    color: #585858;
+}
+.about-team h1{
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 350;
+    padding-left: 35px;
+    padding-top: 30px;
+    color: #494949;
+}
+.about-team p{
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 45px;
+    line-height: 20px;
+    color: #585858;
+}
+
+
+/* Blob */
+
+
+.blob {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    filter: blur(2px);
+    background: linear-gradient(180deg, rgba(233, 233, 233, 0.24), #e0e0e0);
+    border-radius: 34% 62% 35% 60% / 25% 35% 60% 85%;
+    transform: translate(-200px, -80px) rotate(-90deg);
+    transition: 1s cubic-bezier(0.075, 0.02, 0.165, 1);
+    animation: blob-anim 20s infinite alternate;
+}
+
+.blob:hover {
+    width: 320px;
+    height: 320px;
+    filter: blur(25px);
+    box-shadow: inset 0 0 0 5px rgba(230, 230, 220, 0.5),
+        inset 100px 100px 0 0 rgba(202, 202, 202, 0.5),
+        inset 200px 200px 0 0 rgba(215, 215, 215, 0.5),
+        inset 300px 300px 0 0 rgba(232, 232, 232, 0.5)
+}
+@keyframes blob-anim {
+    100% {
+        transform: translate(15px,15px) rotate(-10deg);
+        border-radius: 80% 24% 33% 67% / 50% 55% 45% 32%;
+    }
+}
+
+
+/* Footer */
+
+
+footer {
+    background: rgba(221, 221, 221, 0.295);
+    margin-top: 5vw;
+
+}
+
+footer h1 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 8vw;
+    color: #363636;
+}
+
+@keyframes title-pop-in {
+    0% {
+    	  transform: translateY(-5px);
+    	  opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0px)
+        opacity: 1;
+    }
+}
+@keyframes title-pop-out {
+    0% {
+    	  transform: translateY(5px);
+    	  opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0px)
+        opacity: 1;
+    }	
+}
+
+
+/* OnPhone */
+
+@media  screen and  (max-width: 800px){
+
+
+    /* Header */
+
+
+    header {
+        background-position: 20px;
+        background-size: 80px;
+    }
+    header ul{
+    	  font-size: 8px;
+    }
+    
+    
+    /* About */
+    .about-content h1{
+    	font-size: 25px;
+    }
+    .about-content h3{
+    	font-size: 13px;
+    }
+    .about-history h1{
+    	font-size: 18px;
+    }
+    .about-history p{
+    	font-size: 14px;
+    }
+    .about-team h1{
+    	font-size: 18px;
+    }
+    .about-team p{
+    	font-size: 14px;
+    }
+    
+    
+    
+    /* Footer */
+    footer h1{
+    		font-size: 8px;
+    }
+    
+}
+
